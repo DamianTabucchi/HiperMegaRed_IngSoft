@@ -1,0 +1,14 @@
+{
+    "Spanish": {
+        "Hello": "Hola",
+        "Exit": "Salir"
+    },
+    "English": {
+        "Hello": "Hello",
+        "Exit": "Exit"
+    },
+    "Portuguese": {
+        "Hello": "Olá",
+        "Exit": "Sair"
+    }
+}
