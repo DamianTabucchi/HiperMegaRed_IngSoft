@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HiperMegaRed_IngSoft.Productos;
 using HiperMegaRed_IngSoft.Compras;
+using PdfiumViewer;
 
 namespace HiperMegaRed_IngSoft
 {
@@ -35,6 +36,8 @@ namespace HiperMegaRed_IngSoft
             TraducirTextos();
             MultiLang.SubscribeChangeLangEvent(TraducirTextos);
             this.WindowState = FormWindowState.Maximized;
+
+
         }
 
         private void TraducirTextos()
@@ -216,6 +219,9 @@ namespace HiperMegaRed_IngSoft
                 this.baseDeDatosToolStripMenuItem.Visible = false;
             }
         }
+
+        private PdfViewer pdfViewer;
+
         private void FrmPrincipal_Load_1(object sender, EventArgs e)
         {
             TraducirTextos();
@@ -235,6 +241,8 @@ namespace HiperMegaRed_IngSoft
                 logoutToolStripMenuItem.Enabled = true;
             }
         }
+
+
 
         private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -488,5 +496,10 @@ namespace HiperMegaRed_IngSoft
 
         }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var frmAyuda = new FrmAyuda();
+            frmAyuda.Show();
+        }
     }
 }

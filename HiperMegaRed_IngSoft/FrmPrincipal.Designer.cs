@@ -70,6 +70,7 @@ namespace HiperMegaRed_IngSoft
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -286,7 +287,8 @@ namespace HiperMegaRed_IngSoft
             this.bitacoraToolStripMenuItem,
             this.baseDeDatosToolStripMenuItem,
             this.aBMToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(960, 24);
@@ -457,6 +459,13 @@ namespace HiperMegaRed_IngSoft
             this.generarReporteToolStripMenuItem.Visible = false;
             this.generarReporteToolStripMenuItem.Click += new System.EventHandler(this.generarReporteToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
+            this.toolStripMenuItem1.Text = "?";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // FrmPrincipal
             // 
             this.ClientSize = new System.Drawing.Size(960, 517);
@@ -519,5 +528,6 @@ namespace HiperMegaRed_IngSoft
         private System.Windows.Forms.ToolStripMenuItem validarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emitirSolicitudDeCompraToolStripMenuItem;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
