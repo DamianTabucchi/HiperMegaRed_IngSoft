@@ -1,6 +1,8 @@
 ﻿using HiperMegaRed.BE;
 using HiperMegaRed.BLL;
 using HiperMegaRed.Services;
+using HiperMegaRed.DAL.MultiLenguaje;
+using HiperMegaRed.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,13 +23,19 @@ namespace HiperMegaRed_IngSoft.Usuario
 
         private void ClearData()
         {
-            txtName.Text = txtLastname.Text = txtUsername.Text = txtPassword.Text = txtMail.Text = txtPhone.Text = "";
+            txtName.Text = txtLastname.Text = txtUsername.Text = txtPassword.Text = txtMail.Text = txtPhone.Text = txtDNI.Text = "";
             lblError.Text = "";
             lblError.Visible = false;
         }
         public FrmRegistrar()
         {
             InitializeComponent();
+            TraducirTextos();
+            MultiLang.SubscribeChangeLangEvent(TraducirTextos);
+        }
+        private void TraducirTextos()
+        {
+            WinformUtils.TraducirControl(this);
         }
 
         private bool ValidatePassword(string password)
@@ -86,7 +94,7 @@ namespace HiperMegaRed_IngSoft.Usuario
         {
             if (string.IsNullOrWhiteSpace(this.txtUsername.Text) || string.IsNullOrWhiteSpace(this.txtPassword.Text)
                 || string.IsNullOrWhiteSpace(this.txtDNI.Text) || string.IsNullOrWhiteSpace(this.txtName.Text)
-                || string.IsNullOrWhiteSpace(this.lblLastname.Text) || string.IsNullOrWhiteSpace(this.txtPhone.Text)
+                || string.IsNullOrWhiteSpace(this.txtLastname.Text) || string.IsNullOrWhiteSpace(this.txtPhone.Text)
                 || string.IsNullOrWhiteSpace(txtMail.Text))
             {
                 throw new ValidationException("Complete todos los campos");
@@ -115,7 +123,7 @@ namespace HiperMegaRed_IngSoft.Usuario
                     lblError.Visible = true;
                 }
             }
-           
+
         }
     }
 }

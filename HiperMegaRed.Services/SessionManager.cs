@@ -13,7 +13,6 @@ namespace HiperMegaRed.Services
 
         private IUser _user;
         private ISet<object> _permisos;
-        private DateTime FechaInicio { get; set; }
 
         private SessionManager() { }
 

@@ -1,5 +1,7 @@
 ﻿using HiperMegaRed.BLL;
 using HiperMegaRed.Services;
+using HiperMegaRed.DAL.MultiLenguaje;
+using HiperMegaRed.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +29,14 @@ namespace HiperMegaRed_IngSoft.Usuario
         public FrmChangePass()
         {
             InitializeComponent();
+            TraducirTextos();
+            MultiLang.SubscribeChangeLangEvent(TraducirTextos);
         }
 
+        private void TraducirTextos()
+        {
+            WinformUtils.TraducirControl(this);
+        }
         private void FrmChangePass_Load(object sender, EventArgs e)
         {
             //cbxUsuario.DisplayMember = "Username";

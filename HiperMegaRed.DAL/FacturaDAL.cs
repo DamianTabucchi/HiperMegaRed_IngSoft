@@ -67,6 +67,8 @@ namespace HiperMegaRed.DAL
                     .AddParameter("@factmonto", f.factura_monto)
                     .AddParameter("@factclientdni", f.factura_cliente_dni)
                     .AddParameter("@factentregado", f.factura_productos_entregados)
+                    .AddParameter("@facturametodo", f.factura_metodo_pago)
+                    .AddParameter("@facturavuelto", f.factura_vuelto)
                     .ExecuteNonQuery("sp_factura_insert", true);
             }
         }

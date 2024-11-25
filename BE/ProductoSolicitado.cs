@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HiperMegaRed.Services
+namespace HiperMegaRed.BE
 {
-    public interface ILanguageObserver
+    public class ProductoSolicitado : Producto
     {
-        void UpdateLanguage();
+        public int prodsol_cantidad {  get; set; }
+
+
     }
 }

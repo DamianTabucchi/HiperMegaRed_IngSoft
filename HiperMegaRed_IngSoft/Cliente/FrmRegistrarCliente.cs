@@ -1,6 +1,8 @@
 ﻿using HiperMegaRed.BE;
 using HiperMegaRed.BLL;
 using HiperMegaRed.Services;
+using HiperMegaRed.DAL.MultiLenguaje;
+using HiperMegaRed.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,20 +17,30 @@ namespace HiperMegaRed_IngSoft.Cliente
 {
     public partial class FrmRegistrarCliente : Form
     {
+        private readonly SessionManager session = SessionManager.GetInstance;
+        private BitacoraBLL bitacoraBLL = BitacoraBLL.Instance;
         private ClienteBLL clienteBLL = ClienteBLL.Instance;
         private HiperMegaRed.BE.Cliente client = new HiperMegaRed.BE.Cliente();
+        
         public FrmRegistrarCliente(decimal doc)
         {
             InitializeComponent();
             txtDNI.Text = doc.ToString();
         }
 
+
         public FrmRegistrarCliente()
         {
             InitializeComponent();
             txtDNI.Enabled = true;
+            TraducirTextos();
+            MultiLang.SubscribeChangeLangEvent(TraducirTextos);
         }
 
+        private void TraducirTextos()
+        {
+            WinformUtils.TraducirControl(this);
+        }
         private void FrmRegistrarCliente_Load(object sender, EventArgs e)
         {
 
@@ -51,11 +63,14 @@ namespace HiperMegaRed_IngSoft.Cliente
                 {
                     clienteBLL.SaveClient(client);
                     MessageBox.Show($"Se ha registrado el cliente {client.cliente_nombre}");
+                    var bitacora = new Bitacora("Se ha dado de alta un nuevo Cliente", "Media", DateTime.Now, "Registrar Cliente", session.User.Username);
+                    bitacoraBLL.SaveBitacora(bitacora);
                     Dispose();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    bitacoraBLL.SaveBitacora(new Bitacora($"Ha ocurrido un error: {ex.Message} al dar de alta un cliente", "Media", DateTime.Now, "Registrar Cliente", session.User.Username));
                     throw;
                 }
             }

@@ -8,17 +8,6 @@ namespace HiperMegaRed.BE
 {
     public enum TipoDeProducto
     {
-        Mouse,
-        Teclado,
-        PAD,
-        Auriculares,
-        Microfono,
-        Headset,
-        Silla,
-        Motherboard,
-        CPU,
-        GPU,
-        RAM,
-        Otros
+        Mouse, Teclado, PAD, Auriculares, Microfono, Headset, Silla, Motherboard, CPU, GPU, RAM, Otros
     }
 }

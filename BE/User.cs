@@ -31,8 +31,8 @@ namespace HiperMegaRed.BE
         public string Lastname { get; set; } = string.Empty;
         public string Mail { get; set; }
         public string Phone { get; set; }
-        
         public decimal DNI { get; set; }
+        public int DVHorizontal { get; set; }
 
         List<Componente> _permisos;
 

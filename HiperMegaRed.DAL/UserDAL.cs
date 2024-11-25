@@ -11,6 +11,7 @@ namespace HiperMegaRed.DAL
     public class UserDAL : AbstractDAL
     {
         private static UserDAL instance = new UserDAL();
+        //private static DigitoVerificadorDAL dvDAL = new DigitoVerificadorDAL();
 
         private UserDAL() { }
 
@@ -28,13 +29,25 @@ namespace HiperMegaRed.DAL
             }
         }
 
+        public User FindById(Guid _id)
+        {
+            using (var con = this.GetSqlConnection())
+            {
+                con.Open();
+                var usuario = new Database(con)
+                    .AddParameter("@userId", _id)
+                    .ExecuteQuery<User>("Select * FROM usuarios WHERE Id = @userId");
+                return usuario.Count > 0 ? usuario[0] : null;
+            }
+        }
+
         public IList<User> GetAll()
         {
             using (var connection = this.GetSqlConnection())
             {
                 connection.Open();
 
-                IList<User> lista = new Database(connection).ExecuteQuery<User>("SELECT * FROM Usuarios");
+                IList<User> lista = new Database(connection).ExecuteQuery<User>("SELECT * FROM usuarios");
                 return lista;
             }
         }
@@ -45,7 +58,6 @@ namespace HiperMegaRed.DAL
             {
                 con.Open();
                 new Database(con)
-                    
                     .AddParameter("@Id", user.Id)
                     .AddParameter("@Username", user.Username)
                     .AddParameter("@Password", user.Password)
@@ -58,8 +70,23 @@ namespace HiperMegaRed.DAL
                     .AddParameter("@Mail", user.Mail)
                     .AddParameter("@Phone", user.Phone)
                     .AddParameter("@dni", user.DNI)
+                    .AddParameter("@dvh", user.DVHorizontal)
                     .ExecuteNonQuery("sp_Usuario_UpdateOrInsert", true);
             }
+        }
+
+        public int RemoveUser(User user)
+        {
+            using (var con = this.GetSqlConnection())
+            {
+                con.Open();
+
+                var affected = new Database(con)
+                    .AddParameter("@Id", user.Id)
+                    .ExecuteNonQuery("DELETE from usuarios where Id = @Id");
+                return affected;
+            }
+
         }
 
         public int SavePermisos(User u)

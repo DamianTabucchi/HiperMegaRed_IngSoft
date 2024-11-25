@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using HiperMegaRed.BE;
 using HiperMegaRed.BLL;
 using HiperMegaRed.Services;
+using HiperMegaRed.DAL.MultiLenguaje;
+using HiperMegaRed.DAL;
 
 namespace HiperMegaRed_IngSoft.Permisos
 {
@@ -30,6 +32,14 @@ namespace HiperMegaRed_IngSoft.Permisos
             FiltrarComponentes(lbxPatente, this.patentes, txtPatente.Text);
 
             cbxTipoPermiso.DataSource = permisosBLL.GetAllPermission();
+
+            TraducirTextos();
+            MultiLang.SubscribeChangeLangEvent(TraducirTextos);
+        }
+
+        private void TraducirTextos()
+        {
+            WinformUtils.TraducirControl(this);
         }
 
         private void CargarFamilias()
@@ -169,6 +179,7 @@ namespace HiperMegaRed_IngSoft.Permisos
             if (string.IsNullOrWhiteSpace(nombre))
             {
                 MessageBox.Show("Debe indicar el nombre del permiso para crearlo");
+                return;
             }
 
             var p = new Patente()

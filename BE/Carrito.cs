@@ -15,10 +15,10 @@ namespace HiperMegaRed.BE
         public Carrito()
         {
             this.Id = Guid.NewGuid();
-            carrito_productos = new List<Producto>();
+            carrito_productos = new List<ItemProducto>();
         }
 
-        public List<Producto> carrito_productos;
+        public List<ItemProducto> carrito_productos;
         public DateTime carrito_fecha { get; set; }
 
         
@@ -28,22 +28,22 @@ namespace HiperMegaRed.BE
         public bool carrito_pagado { get; set; } = false;
 
 
-        private double CalcularPrecioTotal()
+        public double CalcularPrecioTotal()
         {
             double res = 0;
-            foreach (Producto p in carrito_productos)
+            foreach (ItemProducto p in carrito_productos)
             {
-                res += p.producto_precio_unidad;
+                res += p.producto_precio_unidad * Convert.ToDouble(p.cantidad);
             }
             return res;
         }
 
-        public void AddProduct(Producto p)
+        public void AddProduct(ItemProducto p)
         {
             carrito_productos.Add(p);
         }
 
-        public void RemProduct(Producto p)
+        public void RemProduct(ItemProducto p)
         {
             carrito_productos.Remove(p);
         }
@@ -53,5 +53,9 @@ namespace HiperMegaRed.BE
             carrito_productos.Remove(carrito_productos.Find(x=>x.Id==p));
         }
 
+        public override string ToString()
+        {
+            return carrito_cliente_dni.ToString();
+        }
     }
 }

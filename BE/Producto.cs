@@ -9,7 +9,6 @@ namespace HiperMegaRed.BE
     public class Producto : AbstractGuidEntity
     {
         public Producto() { }
-
         public string producto_nombre { get; set; }
         public string producto_marca { get; set; }
         public string producto_modelo { get; set; }
@@ -18,6 +17,9 @@ namespace HiperMegaRed.BE
         public int producto_stock { get; set; }
         public double producto_precio_unidad { get; set; }
         public string producto_descripcion { get; set; }
+        public int producto_punto_pedido { get; set; }
+        public bool producto_activo { get; set; }
+        public Guid producto_proveedor { get; set; }
 
     }
 }

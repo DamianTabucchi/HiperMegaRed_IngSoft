@@ -7,8 +7,8 @@
     <ProjectGuid>{0F3D4CC6-A046-478A-BC73-12E674A23F6D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>HiperMegaRed_IngSoft</RootNamespace>
-    <AssemblyName>HiperMegaRed_IngSoft</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AssemblyName>HiperMegaRed_Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <PublishUrl>publish\</PublishUrl>
@@ -26,6 +26,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,11 +51,96 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-adapter, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.bouncy-castle-adapter.8.0.5\lib\net461\itext.bouncy-castle-adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.8.0.5\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=8.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.8.0.5\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +152,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras\FrmEmitirOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FrmEmitirOrdenCompra.Designer.cs">
+      <DependentUpon>FrmEmitirOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FrmRegistrarCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FrmRegistrarCotizacion.Designer.cs">
+      <DependentUpon>FrmRegistrarCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FrmSolicitarCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FrmSolicitarCotizacion.Designer.cs">
+      <DependentUpon>FrmSolicitarCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBitacoraCambios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBitacoraCambios.Designer.cs">
+      <DependentUpon>FrmBitacoraCambios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBitacoraEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBitacoraEventos.Designer.cs">
+      <DependentUpon>FrmBitacoraEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\FrmRegistrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +194,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDigitoVerificador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDigitoVerificador.Designer.cs">
+      <DependentUpon>FrmDigitoVerificador.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +211,24 @@
     </Compile>
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarProveedor.Designer.cs">
+      <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdiomaFRMs\FrmCambiarIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdiomaFRMs\FrmCambiarIdioma.Designer.cs">
+      <DependentUpon>FrmCambiarIdioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdiomaFRMs\FrmGestionIdiomas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdiomaFRMs\FrmGestionIdiomas.Designer.cs">
+      <DependentUpon>FrmGestionIdiomas.cs</DependentUpon>
     </Compile>
     <Compile Include="IdiomaFRMs\FrmIdioma.cs">
       <SubType>Form</SubType>
@@ -108,11 +248,29 @@
     <Compile Include="Permisos\FrmAdministrarPermisosUsuario.Designer.cs">
       <DependentUpon>FrmAdministrarPermisosUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\FrmAprobarOrdenReposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmAprobarOrdenReposicion.Designer.cs">
+      <DependentUpon>FrmAprobarOrdenReposicion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\FrmCarrito.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos\FrmCarrito.Designer.cs">
       <DependentUpon>FrmCarrito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmEmitirOrdenReposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmEmitirOrdenReposicion.Designer.cs">
+      <DependentUpon>FrmEmitirOrdenReposicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FrmGestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmGestionProductos.Designer.cs">
+      <DependentUpon>FrmGestionProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\FrmOrdenDePago.cs">
       <SubType>Form</SubType>
@@ -126,8 +284,20 @@
     <Compile Include="Productos\FrmProductos.Designer.cs">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\FrmSolicitudCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FrmSolicitudCompra.Designer.cs">
+      <DependentUpon>FrmSolicitudCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\FrmChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,14 +328,41 @@
     <Compile Include="Usuario\GestionDeUsuarios.Designer.cs">
       <DependentUpon>GestionDeUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Compras\FrmEmitirOrdenCompra.resx">
+      <DependentUpon>FrmEmitirOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\FrmRegistrarCotizacion.resx">
+      <DependentUpon>FrmRegistrarCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\FrmSolicitarCotizacion.resx">
+      <DependentUpon>FrmSolicitarCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBitacoraCambios.resx">
+      <DependentUpon>FrmBitacoraCambios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBitacoraEventos.resx">
+      <DependentUpon>FrmBitacoraEventos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\FrmRegistrarCliente.resx">
       <DependentUpon>FrmRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDigitoVerificador.resx">
+      <DependentUpon>FrmDigitoVerificador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFacturas.resx">
       <DependentUpon>FrmFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarProveedor.resx">
+      <DependentUpon>FrmRegistrarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdiomaFRMs\FrmCambiarIdioma.resx">
+      <DependentUpon>FrmCambiarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdiomaFRMs\FrmGestionIdiomas.resx">
+      <DependentUpon>FrmGestionIdiomas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IdiomaFRMs\FrmIdioma.resx">
       <DependentUpon>FrmIdioma.cs</DependentUpon>
@@ -176,14 +373,26 @@
     <EmbeddedResource Include="Permisos\FrmAdministrarPermisosUsuario.resx">
       <DependentUpon>FrmAdministrarPermisosUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmAprobarOrdenReposicion.resx">
+      <DependentUpon>FrmAprobarOrdenReposicion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmCarrito.resx">
       <DependentUpon>FrmCarrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmEmitirOrdenReposicion.resx">
+      <DependentUpon>FrmEmitirOrdenReposicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmGestionProductos.resx">
+      <DependentUpon>FrmGestionProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmOrdenDePago.resx">
       <DependentUpon>FrmOrdenDePago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FrmSolicitudCompra.resx">
+      <DependentUpon>FrmSolicitudCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,6 +403,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario\FrmChangePass.resx">
       <DependentUpon>FrmChangePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +443,10 @@
     <ProjectReference Include="..\HiperMegaRed.BLL\HiperMegaRed.BLL.csproj">
       <Project>{aa50f161-bd9d-4ec1-9a3d-63611ee04487}</Project>
       <Name>HiperMegaRed.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HiperMegaRed.DAL\HiperMegaRed.DAL.csproj">
+      <Project>{5fef0c5a-8710-45a4-8f09-3f3da175e402}</Project>
+      <Name>HiperMegaRed.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\HiperMegaRed.Services\HiperMegaRed.Services.csproj">
       <Project>{BEB176FF-CA11-47E1-9A03-525135E14B0B}</Project>

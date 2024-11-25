@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HiperMegaRed.BLL
 {
@@ -13,12 +14,18 @@ namespace HiperMegaRed.BLL
     {
         private static UserBLL instance = new UserBLL();
         private static UserDAL userDAL = UserDAL.GetInstance();
+        private static DigitoVerificadorBLL dvBLL = DigitoVerificadorBLL.Instance;
         private UserBLL() { }
         // Instance => instance; es lo mismo que escribir public static UserBLL Instance { get { return instance; } }
         public static UserBLL Instance => instance;
         public IList<User> GetAll()
         {
             return userDAL.GetAll();
+        }
+
+        public User FindById(Guid _id)
+        {
+            return userDAL.FindById(_id);
         }
         public User FindUser(string username)
         {
@@ -28,6 +35,7 @@ namespace HiperMegaRed.BLL
         public void SaveUser(User user)
         {
             userDAL.SaveUser(user);
+            dvBLL.CalcularDVGenerico("usuarios", user.Id);
         }
         public void Register(User usuario)
         {
@@ -104,6 +112,11 @@ namespace HiperMegaRed.BLL
         public int SavePermisos(User u)
         {
             return userDAL.SavePermisos(u);
+        }
+
+        public int RemoveUser(User u)
+        {
+            return userDAL.RemoveUser(u);
         }
 
         //bool isInRole(Componente c, TipoPermiso permiso, bool existe)

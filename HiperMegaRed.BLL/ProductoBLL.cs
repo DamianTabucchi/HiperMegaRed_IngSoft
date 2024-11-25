@@ -13,6 +13,7 @@ namespace HiperMegaRed.BLL
     {
         private static ProductoBLL instance = new ProductoBLL();
         private static ProductoDAL productoDAL = ProductoDAL.GetInstance();
+        private static BitacoraCambioBLL bitaBLL = BitacoraCambioBLL.Instance;
         private ProductoBLL() { }
         public static ProductoBLL Instance => instance;
 
@@ -21,7 +22,12 @@ namespace HiperMegaRed.BLL
             return productoDAL.FindById(p);
         }
 
-        public IList<Producto> FindByCart(Guid c)
+        public bool ProdNameExist(string name)
+        {
+            return productoDAL.ProdNameExists(name);
+        }
+
+        public IList<ItemProducto> FindByCart(Guid c)
         {
             return productoDAL.FindByCart(c);
         }
@@ -33,15 +39,41 @@ namespace HiperMegaRed.BLL
         {
             return productoDAL.GetAll();
         }
-
-        public void SaveProduct (Producto p)
+        public IList<Producto> GetActive()
         {
-            productoDAL.SaveProducto(p);
+            return productoDAL.GetActive();
+        }
+        public IList<Producto> GetAllWithStock()
+        {
+            return productoDAL.GetAllWithStock();
+        }
+        public int SaveProduct (Producto p)
+        {
+            if (p.Id == null || p.Id == Guid.Empty)
+            {
+                p.Id = Guid.NewGuid();
+            }
+
+            ActualizarBitaCambios(p);
+
+            return productoDAL.SaveProducto(p);
         }
 
         public void UpdateStock(Producto p)
         {
+            ActualizarBitaCambios(p);
             productoDAL.UpdateStock(p);
+        }
+
+        public int RemoveProd(Guid p)
+        {
+            return productoDAL.RemoveProd(p);
+
+        }
+
+        public void ActualizarBitaCambios(Producto p)
+        {
+            bitaBLL.SaveBitacoraCambio(p);
         }
     }
 }

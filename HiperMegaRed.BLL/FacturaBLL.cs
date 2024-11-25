@@ -13,6 +13,7 @@ namespace HiperMegaRed.BLL
     {
         private static FacturaBLL instance = new FacturaBLL();
         private static FacturaDAL facturaDAL = FacturaDAL.GetInstance();
+
         private FacturaBLL() { }
         // Instance => instance; es lo mismo que escribir public static UserBLL Instance { get { return instance; } }
         public static FacturaBLL Instance => instance;
@@ -27,7 +28,7 @@ namespace HiperMegaRed.BLL
             return facturaDAL.FindById(id);
         }
 
-        public IList<Factura> FindByClient(long dni)
+        public IList<Factura> FindByClient(decimal dni)
         {
             return facturaDAL.FindByClient(dni);
         }
@@ -39,6 +40,7 @@ namespace HiperMegaRed.BLL
         //Validaciones aca
         public void SaveFact(Factura f)
         {
+
             facturaDAL.SaveFact(f);
         }
 

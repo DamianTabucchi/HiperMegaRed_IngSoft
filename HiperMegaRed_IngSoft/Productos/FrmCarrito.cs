@@ -83,7 +83,7 @@ namespace HiperMegaRed_IngSoft.Productos
                     cart.carrito_fecha = DateTime.Now;
                     carritoBLL.SaveCart(cart);
                     int prodIngresados = carritoBLL.AddProdToCart(cart);
-                    var data = productBLL.GetAll().ToList();
+                    var data = productBLL.GetAllWithStock().ToList();
                     foreach (var group in cart.carrito_productos.GroupBy(x => x.Id).ToList())
                     {
                         foreach (Producto p in group)

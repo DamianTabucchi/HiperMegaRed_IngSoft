@@ -8,8 +8,8 @@ namespace HiperMegaRed.BE
 {
     public class Idioma
     {
-        public int idioma_id { get; set; }
-        public string idioma_idioma { get; set; }
-        public bool idioma_princiapl { get; set; }
+        public string Id { get; set; }
+        public string Descripcion { get; set; }
+        //public bool idioma_princiapl { get; set; }
     }
 }

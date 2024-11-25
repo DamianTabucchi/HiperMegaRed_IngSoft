@@ -26,7 +26,7 @@ namespace HiperMegaRed.BLL
             return carritoDAL.FindById(id);
         }
 
-        public IList<Carrito> FindByClient(long doc)
+        public IList<Carrito> FindByClient(decimal doc)
         {
             return carritoDAL.FindByClient(doc);
         }
@@ -39,6 +39,11 @@ namespace HiperMegaRed.BLL
         public void SaveCart(Carrito cart)
         {
             carritoDAL.SaveCart(cart);
+        }
+
+        public int RemoveCart(Carrito cart)
+        {
+            return carritoDAL.RemoveCart(cart);
         }
 
         public int UpdateCart(Carrito cart)

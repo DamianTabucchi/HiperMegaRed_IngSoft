@@ -13,5 +13,10 @@ namespace HiperMegaRed.BE
         Cajero,
         Despachador,
         RRHH,
+        Deposito,
+        Inventario,
+        Comprador,
+        ComprasGerente,
+        SectorVarios,
     }
 }

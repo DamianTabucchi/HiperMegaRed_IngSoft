@@ -47,13 +47,14 @@ namespace HiperMegaRed_IngSoft.Usuario
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnLogin);
-            this.groupBox1.Location = new System.Drawing.Point(32, 22);
+            this.groupBox1.Location = new System.Drawing.Point(28, 18);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(549, 226);
+            this.groupBox1.Size = new System.Drawing.Size(488, 181);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "gbx.iniciar.sesion";
             this.groupBox1.Text = "Iniciar Sesión";
             // 
             // lblError
@@ -61,7 +62,7 @@ namespace HiperMegaRed_IngSoft.Usuario
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(133, 131);
+            this.lblError.Location = new System.Drawing.Point(118, 105);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(273, 22);
             this.lblError.TabIndex = 5;
@@ -71,55 +72,58 @@ namespace HiperMegaRed_IngSoft.Usuario
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(234, 88);
+            this.txtPassword.Location = new System.Drawing.Point(208, 70);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(309, 26);
+            this.txtPassword.Size = new System.Drawing.Size(275, 22);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(234, 42);
+            this.txtUsername.Location = new System.Drawing.Point(208, 34);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(309, 26);
+            this.txtUsername.Size = new System.Drawing.Size(275, 22);
             this.txtUsername.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 88);
+            this.label2.Location = new System.Drawing.Point(32, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 2;
+            this.label2.Tag = "lbl.pass";
             this.label2.Text = "Contraseña";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 46);
+            this.label1.Location = new System.Drawing.Point(32, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 20);
+            this.label1.Size = new System.Drawing.Size(126, 16);
             this.label1.TabIndex = 1;
+            this.label1.Tag = "lbl.nombre.usuario";
             this.label1.Text = "Nombre de Usuario";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(384, 180);
+            this.btnLogin.Location = new System.Drawing.Point(341, 144);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(159, 40);
+            this.btnLogin.Size = new System.Drawing.Size(141, 32);
             this.btnLogin.TabIndex = 0;
+            this.btnLogin.Tag = "lbl.login";
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 273);
+            this.ClientSize = new System.Drawing.Size(530, 218);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmLogin";

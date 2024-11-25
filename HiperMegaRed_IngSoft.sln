@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiperMegaRed.GUI", "HiperMegaRed_IngSoft\HiperMegaRed.GUI.csproj", "{0F3D4CC6-A046-478A-BC73-12E674A23F6D}"
 EndProject

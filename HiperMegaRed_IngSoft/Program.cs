@@ -1,4 +1,9 @@
-﻿using System;
+﻿using HiperMegaRed.BE;
+using HiperMegaRed.BLL;
+using HiperMegaRed.DAL;
+using HiperMegaRed.DAL.MultiLenguaje;
+using HiperMegaRed.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +21,12 @@ namespace HiperMegaRed_IngSoft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            MultiLang.Initialize(MultiLangBLL.Instance, "es-AR");
+
             Application.Run(new FrmPrincipal());
+
+            
         }
     }
 }

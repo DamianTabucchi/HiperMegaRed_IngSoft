@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using HiperMegaRed.BE;
 using HiperMegaRed.BLL;
 using HiperMegaRed.Services;
+using HiperMegaRed.DAL.MultiLenguaje;
+using HiperMegaRed.DAL;
 
 namespace HiperMegaRed_IngSoft.Permisos
 {
@@ -24,10 +26,14 @@ namespace HiperMegaRed_IngSoft.Permisos
         public FrmAdministrarPermisosUsuario()
         {
             InitializeComponent();
-
+            TraducirTextos();
+            MultiLang.SubscribeChangeLangEvent(TraducirTextos);
 
         }
-
+        private void TraducirTextos()
+        {
+            WinformUtils.TraducirControl(this);
+        }
         void LlenarTreeView(TreeNode padre, Componente c)
         {
             TreeNode hijo = new TreeNode(c.Nombre);

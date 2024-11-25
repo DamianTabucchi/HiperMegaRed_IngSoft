@@ -51,97 +51,112 @@ namespace HiperMegaRed_IngSoft.Usuario
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(34, 22);
+            this.groupBox1.Location = new System.Drawing.Point(30, 18);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(530, 206);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(471, 165);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "gbx.cambio.pass";
             this.groupBox1.Text = "Cambio de Clave";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnChangePass
             // 
-            this.btnChangePass.Location = new System.Drawing.Point(381, 143);
+            this.btnChangePass.Location = new System.Drawing.Point(339, 114);
+            this.btnChangePass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(136, 42);
+            this.btnChangePass.Size = new System.Drawing.Size(121, 34);
             this.btnChangePass.TabIndex = 6;
+            this.btnChangePass.Tag = "btn.cambiar.pass";
             this.btnChangePass.Text = "Cambiar Clave";
             this.btnChangePass.UseVisualStyleBackColor = true;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(278, 143);
+            this.btnCancel.Location = new System.Drawing.Point(247, 114);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(97, 42);
+            this.btnCancel.Size = new System.Drawing.Size(86, 34);
             this.btnCancel.TabIndex = 5;
+            this.btnCancel.Tag = "btn.cancel";
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtNewPassRep
             // 
-            this.txtNewPassRep.Location = new System.Drawing.Point(214, 99);
+            this.txtNewPassRep.Location = new System.Drawing.Point(190, 79);
+            this.txtNewPassRep.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPassRep.MaxLength = 50;
             this.txtNewPassRep.Name = "txtNewPassRep";
-            this.txtNewPassRep.Size = new System.Drawing.Size(303, 26);
+            this.txtNewPassRep.Size = new System.Drawing.Size(270, 22);
             this.txtNewPassRep.TabIndex = 4;
             this.txtNewPassRep.UseSystemPasswordChar = true;
             // 
             // txtNewPassword
             // 
             this.txtNewPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtNewPassword.Location = new System.Drawing.Point(214, 67);
+            this.txtNewPassword.Location = new System.Drawing.Point(190, 54);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPassword.MaxLength = 50;
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(303, 26);
+            this.txtNewPassword.Size = new System.Drawing.Size(270, 22);
             this.txtNewPassword.TabIndex = 3;
             this.txtNewPassword.UseSystemPasswordChar = true;
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(214, 35);
+            this.txtPassword.Location = new System.Drawing.Point(190, 28);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(303, 26);
+            this.txtPassword.Size = new System.Drawing.Size(270, 22);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 102);
+            this.label4.Location = new System.Drawing.Point(26, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 20);
+            this.label4.Size = new System.Drawing.Size(132, 16);
             this.label4.TabIndex = 3;
+            this.label4.Tag = "lbl.repite.pass";
             this.label4.Text = "Repita Nueva Clave:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 70);
+            this.label3.Location = new System.Drawing.Point(26, 56);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 20);
+            this.label3.Size = new System.Drawing.Size(137, 16);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "lbl.new.pass";
             this.label3.Text = "Ingrese Nueva Clave:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 38);
+            this.label2.Location = new System.Drawing.Point(26, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
+            this.label2.Size = new System.Drawing.Size(134, 16);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "lbl.actual.pass";
             this.label2.Text = "Ingrese Clave Actual:";
             // 
             // FrmChangePass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 248);
+            this.ClientSize = new System.Drawing.Size(525, 198);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmChangePass";
+            this.Tag = "Frm.Cambiar.Pass";
             this.Text = "Cambiar Contraseña";
             this.Load += new System.EventHandler(this.FrmChangePass_Load);
             this.groupBox1.ResumeLayout(false);

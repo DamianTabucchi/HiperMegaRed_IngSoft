@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,13 @@ namespace HiperMegaRed.DAL
     {
         protected string GetConnectionString()
         {
-            var cs = new SqlConnectionStringBuilder();
-            cs.IntegratedSecurity = true;
-            cs.DataSource = "NAIPE\\SQLEXPRESS";
-            cs.InitialCatalog = "HMR";
+            //var cs = new SqlConnectionStringBuilder();
+            //cs.IntegratedSecurity = true;
+            //cs.DataSource = "DITS_ASUS\\SQLEXPRESS01";
+            //cs.InitialCatalog = "HMR";
 
-            return cs.ConnectionString;
+            //return cs.ConnectionString;
+            return ConfigurationManager.ConnectionStrings["MiCadenaConexion"].ConnectionString;
         }
 
         protected SqlConnection GetSqlConnection()
@@ -31,27 +33,27 @@ namespace HiperMegaRed.DAL
             return con;
         }
 
-        //protected int InvokeProcedure(string name)
-        //{
-        //    return InvokeProcedure(name, null);
-        //}
+        protected int InvokeProcedure(string name)
+        {
+            return InvokeProcedure(name, null);
+        }
 
-        //protected int InvokeProcedure(string name, IDictionary<string, object> parameters)
-        //{
-        //    using (var con = this.GetSqlConnectionOpen())
-        //    {
-        //        var db = new Database(con);
+        protected int InvokeProcedure(string name, IDictionary<string, object> parameters)
+        {
+            using (var con = this.GetSqlConnectionOpen())
+            {
+                var db = new Database(con);
 
-        //        if (parameters != null)
-        //        {
-        //            foreach (string key in parameters.Keys)
-        //            {
-        //                db.AddParameter(key, parameters[key]);
-        //            }
-        //        }
+                if (parameters != null)
+                {
+                    foreach (string key in parameters.Keys)
+                    {
+                        db.AddParameter(key, parameters[key]);
+                    }
+                }
 
-        //        return db.ExecuteNonQuery(name, true);
-        //    }
-        //}
+                return db.ExecuteNonQuery(name, true);
+            }
+        }
     }
 }
